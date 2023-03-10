@@ -22,21 +22,21 @@ const winningPositions = [
 
 //let's create a function to initialise the game
 function initGame() {
-    currentPlayer = "X";                                        //at start current player is X 
-    gameGrid = ["","","","","","","","",""];                   //all box is empty at starting
+    currentPlayer = "X";                                       //at start current player is X 
+    gameGrid = ["","","","","","","","",""];                  //all box is empty at starting
     //UI pr all box empty bhi karna padega boxes ko after click NEWGAME button
     boxes.forEach((box, index) => {
         box.innerText = "";                                  //empty all box by forEach loop
 // The pointer-event: all CSS property is used to allow all types of pointer events on an element, such as clicking, dragging, scrolling, hovering, etc. 
         boxes[index].style.pointerEvents = "all";
         
-        //if winn anyone then background color is win and if click to start new game then color green is remove 
-        box.classList = `box box${index+1}`;
+        //if winn anyone then background color is win and if click to start new game then color green is remove by this code
+        box.classList = `box box${index+1}`;               //all box fetch $(0+1=1box, 0+2=2ndbox and so on..)
     });
 
     //newGamebtn jo sabse niche show hoga jisme button ko fetch kiya gya hai, classList - btn k css class jaha all style property add hai usko remove kr denge so button will unvisible in this case
     newGameBtn.classList.remove("active");
-    //current player k under $ k through currentPlayer ki value daal diye
+    //current player is same as it come and  $ k through currentPlayer ki value daal diye sath me
     gameInfo.innerText = `Current Player - ${currentPlayer}`;
 }
 
